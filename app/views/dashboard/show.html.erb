@@ -1,0 +1,11 @@
+<h1>Dashboard#show</h1>
+
+<% @twitter_accounts.each do |twitter_account| %>
+  <p>
+    <%= link_to(twitter_account.name, twitter_account) %>
+    <%= twitter_account.tweets.first.try(:text) %>
+    <%= link_to 'Destroy', twitter_account, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
+
+<%= link_to('New Twitter account', new_twitter_account_path) %>

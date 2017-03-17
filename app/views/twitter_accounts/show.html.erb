@@ -1,0 +1,9 @@
+<h1>TwitterAccounts#show</h1>
+
+<% if @twitter_account.name %>
+  <%= @twitter_account.name %>
+    <%= render partial: 'tweets_list' %>
+  <% end %>
+
+<%= link_to('Refresh', controller: 'twitter_accounts', action:'refresh_button', id:@twitter_account.id ) %>
+<%= link_to('Dashboard', dashboard_show_path) %>

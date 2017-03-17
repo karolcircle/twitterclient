@@ -1,0 +1,18 @@
+<h1>TwitterAccounts#new</h1>
+<p>Find me in app/views/twitter_accounts/new.html.erb</p>
+<% if @twitter_account.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@twitter_account.errors.count, "error") %> prohibited this Twitter account from being saved:</h2>
+    <ul>
+    <% @twitter_account.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_for(@twitter_account) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create" %>
+<% end %>
+
+<%= link_to('Dashboard', dashboard_show_path) %>
