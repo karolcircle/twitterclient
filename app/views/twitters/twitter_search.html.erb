@@ -1,0 +1,10 @@
+<form>
+  <p>
+    <input name="tag" id="tag" placeholder="Provide tags with # here">
+    <button type="submit" class="">Search</button>
+  </p>
+</form>
+
+<% if request.GET.include? "tag" %>
+  <%= render 'tweets_list' %>
+<% end %>

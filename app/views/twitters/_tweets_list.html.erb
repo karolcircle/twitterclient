@@ -1,0 +1,7 @@
+<% @search.each do |tweet| %>
+  <p>
+    <%= image_tag(tweet.user.profile_image_url) %>
+      <%= tweet.user.name %>
+      <%= tweet.text %>
+  </p>
+<% end %>
